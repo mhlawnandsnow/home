@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MH Lawn Care &amp; Snow | Warren, Center Line &amp; Sterling Heights</title>
+<meta name="description" content="Lawn mowing, leaf cleanup, branch trimming, weed whacking, edging and snow removal in Warren, Center Line and Sterling Heights, MI. Free quotes.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#f6f9f7; --surface:#ffffff; --ink:#14222b; --muted:#4d5f69; --line:#d5e0da;
+  --spruce:#1f4a2e; --on-spruce:#f6f9f7; --accent:#2f7d3e; --accent-soft:#e3f1e5; --on-accent:#ffffff;
+  --yellow:#f2c230; --on-yellow:#14222b;
+  --head:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f1815; --surface:#17241f; --ink:#eaf2ee; --muted:#a3b5ad; --line:#2a3b34;
+    --spruce:#0b2216; --on-spruce:#eaf2ee; --accent:#6fc57c; --accent-soft:#1c3326; --on-accent:#0f1815;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f1815; --surface:#17241f; --ink:#eaf2ee; --muted:#a3b5ad; --line:#2a3b34;
+  --spruce:#0b2216; --on-spruce:#eaf2ee; --accent:#6fc57c; --accent-soft:#1c3326; --on-accent:#0f1815;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0;letter-spacing:-.01em}
+.wrap{width:min(1080px,100% - 2.5rem);margin-inline:auto}
+:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+header{background:var(--spruce);color:var(--on-spruce)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
+.brand{display:flex;align-items:center;gap:.65rem;font-family:var(--head);font-weight:800;font-size:1.2rem;text-decoration:none}
+.brand svg{width:34px;height:34px;flex:none}
+.brand small{display:block;font-family:var(--body);font-weight:400;font-size:.8rem;opacity:.8}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:.65rem 1.3rem;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid transparent;font-family:var(--body);font-size:1rem;cursor:pointer}
+.btn-yellow{background:var(--yellow);color:var(--on-yellow)}
+.btn-yellow:hover{filter:brightness(1.06)}
+.btn-line{border-color:currentColor;color:inherit}
+.btn-line:hover{background:rgba(255,255,255,.1)}
+
+.hero{background:var(--spruce);color:var(--on-spruce);padding:2.5rem 0 4rem}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.6rem);font-weight:800;max-width:14ch}
+.hero p{max-width:46ch;font-size:1.2rem;margin:1.2rem 0 1.8rem;opacity:.92}
+.cta{display:flex;flex-wrap:wrap;gap:.75rem}
+
+section{padding:3.5rem 0}
+h2{font-size:clamp(1.8rem,4.5vw,2.6rem);font-weight:800;margin-bottom:.6rem}
+.lead{color:var(--muted);max-width:56ch;margin:0 0 1.8rem}
+
+/* season switcher */
+.seasons{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;margin-top:-2.5rem;position:relative}
+.tabs{display:flex;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.tab{flex:1 1 0;min-width:130px;padding:1rem .8rem;background:none;border:0;border-bottom:4px solid transparent;font:600 1rem var(--body);color:var(--muted);cursor:pointer}
+.tab[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);background:var(--accent-soft)}
+.panel{padding:1.6rem}
+.panel[hidden]{display:none}
+.panel h3{font-size:1.5rem;margin-bottom:.4rem}
+.panel>p{margin:0 0 1.2rem;color:var(--muted);max-width:52ch}
+.svc{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:.8rem}
+.svc li{padding:1rem 1.1rem;border-left:5px solid var(--accent);background:var(--bg);border-radius:0 10px 10px 0}
+.svc strong{display:block;font-family:var(--head);font-size:1.1rem}
+.svc span{color:var(--muted);font-size:.97rem}
+
+.how{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.2rem}
+.how div{padding:1.3rem;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.how b{font-family:var(--head);font-size:1.15rem;display:block;margin-bottom:.3rem}
+.how p{margin:0;color:var(--muted)}
+
+.about{background:var(--accent-soft)}
+.about p{max-width:60ch;margin:0 0 1rem}
+.towns{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0;margin:1rem 0 0}
+.towns li{padding:.5rem 1rem;border-radius:999px;background:var(--surface);border:1px solid var(--line);font-weight:600}
+
+.contact{background:var(--spruce);color:var(--on-spruce);text-align:left}
+.contact .lead{color:inherit;opacity:.88}
+.contact a.mail{display:inline-block;margin-top:1.2rem;overflow-wrap:anywhere}
+.find{margin:1.2rem 0 0}.find a{font-weight:600}
+footer{padding:1.5rem 0;color:var(--muted);font-size:.9rem}
+
+.qf{display:grid;gap:1rem;max-width:620px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:1.4rem}
+.qf label{display:grid;gap:.3rem;font-weight:600}
+.qf input[type=text],.qf input[type=tel],.qf textarea{font:inherit;font-weight:400;padding:.7rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.qf fieldset{border:1px solid var(--line);border-radius:8px;padding:.5rem 1rem .9rem;margin:0}
+.qf legend{font-weight:600;padding:0 .4rem}
+.qf .ck{display:flex;align-items:center;gap:.6rem;font-weight:400;padding:.25rem 0}
+.qf .ck input{width:20px;height:20px;accent-color:var(--accent)}
+.qf .btn-line{color:var(--ink)}
+.qf select{font:inherit;font-weight:400;padding:.7rem .8rem;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
+.qf .more{display:grid;gap:.8rem;padding:.3rem 0 .7rem 1.8rem}
+.qf .more[hidden]{display:none}
+.qf .hint{margin:0 0 .4rem;color:var(--muted);font-size:.95rem}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap bar">
+    <a class="brand" href="#top"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 27C5 13 13 5 27 5c0 14-8 22-22 22z" fill="var(--yellow)"/><path d="M8 24L22 10" stroke="var(--spruce)" stroke-width="2" stroke-linecap="round" fill="none"/></svg><span>MH Lawn Care &amp; Snow<small>Warren · Center Line · Sterling Heights</small></span></a>
+    <a class="btn btn-yellow" href="tel:+13137402403">Call</a>
+  </div>
+  <div class="hero" id="top">
+    <div class="wrap">
+      <h1>Your yard, handled all year.</h1>
+      <p>Mowing, leaf cleanup, branch trimming and snow removal from two local friends who do the work themselves. Free quotes.</p>
+      <div class="cta">
+        <a class="btn btn-yellow" href="#quote">Get a free quote</a>
+        <a class="btn btn-line" href="tel:+13137402403">Call now</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="seasons" id="services">
+      <div class="tabs" role="tablist" aria-label="Services by season">
+        <button class="tab" role="tab" id="t-grow" aria-controls="p-grow" aria-selected="true">Spring &amp; summer</button>
+        <button class="tab" role="tab" id="t-fall" aria-controls="p-fall" aria-selected="false" tabindex="-1">Fall</button>
+        <button class="tab" role="tab" id="t-snow" aria-controls="p-snow" aria-selected="false" tabindex="-1">Winter</button>
+      </div>
+      <div class="panel" role="tabpanel" id="p-grow" aria-labelledby="t-grow">
+        <h3>Keep it cut and clean</h3>
+        <p>Regular care so your lawn looks sharp from the street.</p>
+        <ul class="svc">
+          <li><strong>Lawn mowing</strong><span>Cut, trimmed and cleaned up.</span></li>
+          <li><strong>Weed whacking</strong><span>The spots the mower can’t reach.</span></li>
+          <li><strong>Edging</strong><span>Crisp lines along walks, drives and beds.</span></li>
+          <li><strong>Branch trimming</strong><span>Overgrown branches cut back.</span></li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="p-fall" aria-labelledby="t-fall" hidden>
+        <h3>Get ahead of the leaves</h3>
+        <p>Clear the yard before winter settles in.</p>
+        <ul class="svc">
+          <li><strong>Leaf cleanup</strong><span>Leaves cleared from the lawn and beds.</span></li>
+          <li><strong>Branch trimming</strong><span>Cut back before the snow and wind.</span></li>
+          <li><strong>Final mow &amp; edge</strong><span>One last cut to end the season clean.</span></li>
+        </ul>
+      </div>
+      <div class="panel" role="tabpanel" id="p-snow" aria-labelledby="t-snow" hidden>
+        <h3>Snow gone, so you can go</h3>
+        <p>Request a quote or text us when snow is in the forecast and we’ll put you on the list.</p>
+        <ul class="svc">
+          <li><strong>Snow shoveling</strong><span>Driveways and walkways shoveled by hand.</span></li><li><strong>Regular customers</strong><span>Sign up as a regular and you’re first on our list when it snows.</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2>How it works</h2>
+      <p class="lead">Tell us about the job and we’ll get back to you with a price.</p>
+      <div class="how">
+        <div><b>1. Fill out the quote form</b><p>Tell us what you need and where. It takes about a minute.</p></div>
+        <div><b>2. We get back to you</b><p>We’ll text or call to confirm the details and give you a price.</p></div>
+        <div><b>3. We show up</b><p>Agree on the price, pick a day, and we handle the rest.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="quote">
+    <div class="wrap">
+      <h2>Get a free quote</h2>
+      <p class="lead">Tell us about the job. When you tap Send, it opens a message to us with your answers filled in.</p>
+      <div class="qf">
+        <label>Your name<input type="text" id="qn" autocomplete="name"></label>
+        <label>Phone number<input type="tel" id="qp" autocomplete="tel"></label>
+        <label>Street address and town<input type="text" id="qa" autocomplete="street-address"></label>
+        <fieldset>
+          <legend>What do you need?</legend>
+          <p class="hint">Your best guess is fine, and we’ll confirm when we see the property.</p>
+          <label class="ck"><input type="checkbox" value="Lawn mowing" data-more="m-mow"> Lawn mowing</label>
+          <div class="more" id="m-mow" hidden>
+            <label>Yard size<select data-l="Yard size"><option value="">Choose one</option><option>Small (townhouse or tiny yard)</option><option>Medium (typical house)</option><option>Large (corner lot or bigger)</option></select></label>
+            <label>Which areas<select data-l="Areas"><option value="">Choose one</option><option>Front</option><option>Back</option><option>Front and back</option></select></label>
+            <label>Grass condition<select data-l="Grass"><option value="">Choose one</option><option>Kept up</option><option>Overgrown</option></select></label>
+            <label>How often<select data-l="How often"><option value="">Choose one</option><option>One time</option><option>Weekly</option><option>Every other week</option></select></label>
+          </div>
+          <label class="ck"><input type="checkbox" value="Weed whacking and edging"> Weed whacking and edging</label>
+          <label class="ck"><input type="checkbox" value="Leaf cleanup" data-more="m-leaf"> Leaf cleanup</label>
+          <div class="more" id="m-leaf" hidden>
+            <label>Yard size<select data-l="Yard size"><option value="">Choose one</option><option>Small (townhouse or tiny yard)</option><option>Medium (typical house)</option><option>Large (corner lot or bigger)</option></select></label>
+            <label>How many leaves<select data-l="Leaves"><option value="">Choose one</option><option>Light</option><option>Heavy</option><option>Very heavy</option></select></label>
+            <label>Where<select data-l="Where"><option value="">Choose one</option><option>Front</option><option>Back</option><option>Front and back</option></select></label>
+          </div>
+          <label class="ck"><input type="checkbox" value="Branch trimming" data-more="m-branch"> Branch trimming</label>
+          <div class="more" id="m-branch" hidden>
+            <label>How many trees or bushes<select data-l="Count"><option value="">Choose one</option><option>1</option><option>A few (2 to 3)</option><option>Many (4 or more)</option></select></label>
+            <label>How high<select data-l="Height"><option value="">Choose one</option><option>Low (I can reach it)</option><option>High (over my head)</option></select></label>
+          </div>
+          <label class="ck"><input type="checkbox" value="Snow shoveling" data-more="m-snow"> Snow shoveling</label>
+          <div class="more" id="m-snow" hidden>
+            <label>What needs clearing<select data-l="Clear"><option value="">Choose one</option><option>Driveway</option><option>Walkways and steps</option><option>Both</option></select></label>
+            <label>Driveway size<select data-l="Driveway"><option value="">Choose one</option><option>Small (1 car)</option><option>Medium (2 cars)</option><option>Large (3 or more cars, or very long)</option></select></label>
+            <label>Public sidewalk in front of the house?<select data-l="Sidewalk"><option value="">Choose one</option><option>Yes, clear it too</option><option>No</option></select></label>
+          </div>
+        </fieldset>
+        <label>When do you need it?<select id="qw"><option value="">Choose one</option><option>As soon as possible</option><option>This week</option><option>In the next few weeks</option><option>Just getting a price</option></select></label>
+        <label>Anything else we should know?<textarea id="qd" rows="3" placeholder="Example: landmarks to find the house, or items in the yard we need to move"></textarea></label>
+        <div class="cta">
+          <a id="qs" class="btn btn-yellow" href="sms:+13137402403">Send by text</a>
+          <a id="qe" class="btn btn-line" href="mailto:mh.lawncare.mi@gmail.com">Send by email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<section class="about">
+    <div class="wrap">
+      <h2>Two friends, one crew</h2>
+      <p>MH Lawn Care &amp; Snow is run by two friends from the area. When you call, you talk to the people who will actually be in your yard.</p>
+      <p>We serve:</p>
+      <ul class="towns"><li>Warren</li><li>Center Line</li><li>Sterling Heights</li><li>Nearby areas, just ask</li></ul>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Questions? Ready to book?</h2>
+      <p class="lead">Fill out the quote form above, or reach us directly. Text is fastest.</p>
+      <div class="cta">
+        <a class="btn btn-yellow" href="sms:+13137402403">Text (313) 740-2403</a>
+        <a class="btn btn-line" href="tel:+13137402403">Call</a>
+      </div>
+      <a class="mail" href="mailto:mh.lawncare.mi@gmail.com">mh.lawncare.mi@gmail.com</a>
+      <p class="find">Find us on <a href="https://www.facebook.com/share/1BruVYx4Gi/" target="_blank" rel="noopener">Facebook</a> and <a href="https://share.google/R5jEsUm4wEtfbPIod" target="_blank" rel="noopener">Google</a></p>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© MH Lawn Care &amp; Snow · Warren, Center Line &amp; Sterling Heights, MI</div></footer>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function pick(t){
+    tabs.forEach(function(x){
+      var on=x===t;
+      x.setAttribute('aria-selected',on);
+      x.tabIndex=on?0:-1;
+      document.getElementById(x.getAttribute('aria-controls')).hidden=!on;
+    });
+  }
+  tabs.forEach(function(t,i){
+    t.addEventListener('click',function(){pick(t)});
+    t.addEventListener('keydown',function(e){
+      var n=e.key==='ArrowRight'?i+1:e.key==='ArrowLeft'?i-1:-1;
+      if(n<0)return;
+      n=(n+tabs.length)%tabs.length;
+      pick(tabs[n]);tabs[n].focus();
+    });
+  });
+  var m=new Date().getMonth();
+  var s=(m>=10||m<=2)?2:(m>=8)?1:0;
+  pick(tabs[s]);
+})();
+</script>
+<script>
+(function(){
+  var f=document.querySelector('.qf'),s=document.getElementById('qs'),e=document.getElementById('qe');
+  var nl=String.fromCharCode(10);
+  function v(id){return document.getElementById(id).value.trim()}
+  function upd(){
+    var t='Hi, I would like a free quote.';
+    [['qn','Name'],['qp','Phone'],['qa','Address']].forEach(function(p){if(v(p[0]))t+=nl+p[1]+': '+v(p[0])});
+    var lines=[];
+    [].slice.call(f.querySelectorAll('input[type=checkbox]')).forEach(function(c){
+      var id=c.getAttribute('data-more'),box=id&&document.getElementById(id);
+      if(box)box.hidden=!c.checked;
+      if(!c.checked)return;
+      var parts=[];
+      if(box)[].slice.call(box.querySelectorAll('[data-l]')).forEach(function(x){var val=x.value.trim();if(val)parts.push(x.getAttribute('data-l')+': '+val)});
+      lines.push(c.value+(parts.length?' - '+parts.join('; '):''));
+    });
+    if(lines.length)t+=nl+'Needs:'+nl+lines.map(function(l){return '- '+l}).join(nl);
+    if(v('qw'))t+=nl+'When: '+v('qw');
+    if(v('qd'))t+=nl+'Notes: '+v('qd');
+    s.href='sms:+13137402403?&body='+encodeURIComponent(t);
+    e.href='mailto:mh.lawncare.mi@gmail.com?subject='+encodeURIComponent('Free quote request')+'&body='+encodeURIComponent(t);
+  }
+  f.addEventListener('input',upd);
+  f.addEventListener('change',upd);
+  upd();
+})();
+</script>
+<script>
+document.addEventListener('click',function(ev){
+  var a=ev.target.closest&&ev.target.closest('a[href="#quote"]');
+  if(!a)return;
+  ev.preventDefault();
+  var q=document.getElementById('quote');
+  if(q)q.scrollIntoView({behavior:'smooth',block:'start'});
+});
+</script>
+</body>
+</html>
